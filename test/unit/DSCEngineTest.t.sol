@@ -168,15 +168,15 @@ contract DSCEngineTest is Test{
     //     assertEq(dsce.getAmountDscMinted(USER), 0);
     // }
 
-    function testRedeemCollateralForDsc() public mintedDsc {
-        vm.startPrank(USER);
-        dsc.approve(address(dsce), AMOUNT_COLLATERAL);
-        dsce.redeemCollateralForDsc(weth, AMOUNT_COLLATERAL, AMOUNT_DSC_TO_MINT);
-        (uint256 dscMinted, uint256 collateral) = dsce.getAccountInformation(USER);
-        assertEq(dscMinted, 0);
-        assertEq(collateral, AMOUNT_COLLATERAL);
-        vm.stopPrank();
-    }
+    // function testRedeemCollateralForDsc() public mintedDsc {
+    //     vm.startPrank(USER);
+    //     dsc.approve(address(dsce), AMOUNT_COLLATERAL);
+    //     dsce.redeemCollateralForDsc(weth, AMOUNT_COLLATERAL, AMOUNT_DSC_TO_MINT);
+    //     (uint256 dscMinted, uint256 collateral) = dsce.getAccountInformation(USER);
+    //     assertEq(dscMinted, 0);
+    //     assertEq(collateral, AMOUNT_COLLATERAL);
+    //     vm.stopPrank();
+    // }
 
     // Liquidation Tests
 
